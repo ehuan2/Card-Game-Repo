@@ -1,5 +1,5 @@
 /*
- * Eric Huang - Feb.10th 2020
+ *Eric Huang - Feb.10th 2020
  *
  * This is made for the CHIMP Game, this the deck game
  *
@@ -34,21 +34,24 @@ public class Deck { // this is the deck class for the cards
         this.cards.addAll(Arrays.asList(shuffled)); // adds the shuffled to it
 
     }
-
-
-    public Deck(LinkedList<Short> addCards) {
+  
+  
+     public Deck(LinkedList<Short> addCards) {
 
         cards = new LinkedList<>(addCards);
 
     }
 
-
-    public short giveCard(int card) { // gives away the cards needed
-        // looks for the index of the card
-        return cards.remove(card);
-
+    public short giveCard(int cardIndex){ // gives away the cards needed
+    									// removes card at that index
+    	return cards.remove(cardIndex);
+    	
     }
 
+    public short receiveCard(short card){
+    	cards.add(card); // adds a card into it
+    }
+  
     public int[] dealCards(byte n) { // this deals away n cards
         int[] giveAway = new int[n]; // goes through, returns an array of the cards given
         for (int i = 0; i < n; i++) {
