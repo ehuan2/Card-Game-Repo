@@ -75,8 +75,12 @@ public class Player { // a class player for each player
     
     public void pickUp(){
     	
-    	if(deck.size() <= 0){
+    	if(Chimp.deck.cards.size() <= 0){
     		
+		for(Short a : Chimp.discard.cards){
+			Chimp.deck.receiveCard(a);	
+		}
+		
     	}
     	this.deck.receive(Chimp.deck.giveCard(0)); // takes deck, and puts in the 0th index into player's deck
     	
