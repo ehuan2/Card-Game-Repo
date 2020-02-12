@@ -7,6 +7,8 @@ public class Player { // a class player for each player
 	
 	int chimp;
 	
+	final static String CHIMP = "CHIMP";
+	
 	public Player(){
 		deck = new Deck(new LinkedList<>()); // initializes deck with being empty
 		name = "N/A";
@@ -88,7 +90,9 @@ public class Player { // a class player for each player
     }
     
     public String toString(){ // to string method for people's decks
-    	return name + "'s deck : " + deck;
+	    String status = CHIMP.substring(0, chimp); // gets the substring of chimp in order to print it out later 
+	    
+	    return name + "'s deck : " + deck + " CHIMP : " + status; 
     }
     
 	
