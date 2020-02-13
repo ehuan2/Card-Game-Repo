@@ -1,7 +1,12 @@
 
 /*
- * Eric Huang - Feb.12th 2020
+ * Eric Huang
+ * Feb.10th - 18th 2020
  * CHIMP Game
+ * This class here runs the entire game
+ *
+ * Includes FileIO and PDF Opener
+ *
  */
 
 import java.util.*;
