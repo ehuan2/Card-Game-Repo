@@ -81,34 +81,56 @@ public class Chimp {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("How many players are there?");
-
-
-
+        while(true){
+            try{
+                
                 int num = scan.nextInt();
 
                 if(num > 4){ // throws an exception if it's greater than 4
-
+                    throws new Exception();
                 }
 
                 deck = new Deck();
                 discard = new Deck(new LinkedList<>());
 
-                players = new LinkedList<>();
-                for (int i = 0; i < num; i++) {
-                    System.out.println("What is Player " + i + "'s Name?");
-                    players.add(new Player(scan.next()));
-                }
-                deck.shuffle();
-                deck.deal(players, (byte)3);
+                 players = new LinkedList<>();
+                 for (int i = 0; i < num; i++) {
+                      System.out.println("What is Player " + i + "'s Name?");
+                      players.add(new Player(scan.next()));
+                  }
+                   deck.shuffle();
+                    deck.deal(players, (byte)3);
 
-                for (Player a: players) {
-                    System.out.println(a);
-                }
+                 for (Player a: players) {
+                        System.out.println(a);
+                 }
 
-                nextPlayer();
+                    nextPlayer();
+                  
+                
+                break;
+               } catch (IOException e){
+                   
+                   System.out.println("You opened the rules!");
+                
+                if ((new File("c:\\Java-Interview.pdf")).exists()) {
 
+			    Process p = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler c:\\Java-Interview.pdf");
+			    p.waitFor();
+				
+		        } else {
 
+			        System.out.println("File is not exists");
 
+		        }
+                
+                
+                } catch (Exception e){
+                    System.out.println("Input a number from 2-5!!");
+                }   
+            }
+        
+        }
         }
 
     }
