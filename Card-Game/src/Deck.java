@@ -15,7 +15,7 @@ public class Deck { // this is the deck class for the cards
     public Deck() { // initializes a full deck
         cards = new LinkedList<>();
         for (int i = 0; i < DECK; i++) {
-            cards.add((short)i);
+            cards.add((short) i);
         }
     }
 
@@ -34,30 +34,22 @@ public class Deck { // this is the deck class for the cards
         this.cards.addAll(Arrays.asList(shuffled)); // adds the shuffled to it
 
     }
-  
-  
-     public Deck(LinkedList<Short> addCards) {
+
+
+    public Deck(LinkedList<Short> addCards) {
 
         cards = new LinkedList<>(addCards);
 
     }
 
-    public short giveCard(int cardIndex){ // gives away the cards needed
-    									// removes card at that index
-    	return cards.remove(cardIndex);
-    	
+    public short giveCard(int cardIndex) { // gives away the cards needed
+        // removes card at that index
+        return cards.remove(cardIndex);
+
     }
 
-    public short receiveCard(short card){
-    	cards.add(card); // adds a card into it
-    }
-  
-    public int[] dealCards(byte n) { // this deals away n cards
-        int[] giveAway = new int[n]; // goes through, returns an array of the cards given
-        for (int i = 0; i < n; i++) {
-            giveAway[i] = cards.removeFirst();
-        }
-        return giveAway;
+    public void receiveCard(short card) {
+        cards.add(card); // adds a card into it
     }
 
     public void sort() { // this can sort the cards inside the deck
@@ -73,21 +65,28 @@ public class Deck { // this is the deck class for the cards
 
         String deck = "";
 
-        for (int i = 0; i <= cards.size()-1; i++) {
-
+        for (int i = 0; i <= cards.size() - 1; i++) {
 
 
             Short a = cards.get(i);
 
 
-            deck += Card.decode(a) + (i == cards.size()-1 ? "." : ", ");
+            deck += Card.decode(a) + (i == cards.size() - 1 ? "." : ", ");
 
         }
         return deck;
     }
 
     public void deal(LinkedList<Player> players, byte cards) { // this also deals cards, but to everyone in the game
-
+        for (int i = 0; i < cards; i++) { // loops over for each card
+            for (Player a : players) {
+                a.pickUp(); // pickups for each player
+                if(Chimp.deck.cards.size() == 0){ // error checking essentially
+                    System.out.println("No more cards!!");
+                    return;
+                }
+            }
+        }
 
     }
 
