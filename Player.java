@@ -93,8 +93,8 @@ public class Player { // a class player for each player
     }
 
     public void pickUp(){ // method to pick up a card
-
-        // if empty, takes from discard pile
+        
+        // if empty, discard pile and reshuffles
         
         if(Chimp.deck.cards.size() <= 0){
 
