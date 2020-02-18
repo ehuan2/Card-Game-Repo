@@ -75,9 +75,6 @@ public class Player { // a class player for each player
 
     public short aceValue(){ // returns the ace value
         
-        
-        
-        
         // will display options until one is picked
         
         String[]options = {"1", "11"};
@@ -95,12 +92,9 @@ public class Player { // a class player for each player
 
     }
 
-    public void pickUp(){
+    public void pickUp(){ // method to pick up a card
 
-        // method to pick up a card
-        
-        
-        
+        // if empty, takes from discard pile
         
         if(Chimp.deck.cards.size() <= 0){
 
