@@ -1,3 +1,13 @@
+/* Eric Huang
+*
+* Player Class
+*
+* The player class that contains the decks for the players, name and chimp status 
+*
+* Start date : Feb.10th 2020 
+* End date : Feb.18th 2020
+*/
+
 import javax.swing.*;
 import java.util.*;
 
