@@ -73,21 +73,35 @@ public class Player { // a class player for each player
 
     }
 
-    public short aceValue(){
-        String[] options = new String[]{"1", "11"};
-
-        int num = JOptionPane.showOptionDialog(Chimp.gui.frame, "Choose the value of the ace!",
+    public short aceValue(){ // returns the ace value
+        
+        
+        
+        
+        // will display options until one is picked
+        
+        String[]options = {"1", "11"};
+        
+        int num = 0;
+        
+        while(num != 1 && num != 11){
+        num = JOptionPane.showOptionDialog(Chimp.gui.frame, "Choose the value of the ace!",
                 "Ace Value",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
                 null, options, options[0]) == 0 ? 1 : 11;
+        }
 
-
-        return (short)num; // otherwise, returns it
+        return (short)num; 
 
     }
 
     public void pickUp(){
 
+        // method to pick up a card
+        
+        
+        
+        
         if(Chimp.deck.cards.size() <= 0){
 
             for(Short a : Chimp.discard.cards){
