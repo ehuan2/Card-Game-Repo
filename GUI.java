@@ -4,24 +4,20 @@ import java.io.File;
 public class GUI {
 
     JFrame frame; // a good old frame to contain it all
-
-
-    JPanel panel;
-    JScrollPane scroll;
-
-
+    JPanel panel; // a panel to have within the frame
+    
+    JScrollPane scroll; // scrolling text area
+    JTextArea txtMoves; // contains all the game play
+    
     JButton[] cardChoices; // buttons to choose which card
     JButton btnInstructions; // button for instructions
-    JTextArea txtMoves; // contains all the game play
+    
     final static int numCards = 3; // an integer that will hold the number of cards
 
     public GUI() {
+        
         frame = new JFrame("CHIMP!!");
         panel = new JPanel(); // builds the frame and panel
-
-        btnInstructions = new JButton("HELP"); // a help button that opens up the pdf to the rules
-        txtMoves = new JTextArea();
-        txtMoves.append("Welcome to CHIMP!\n\n");
 
         frame.setSize(570, 500); // setting some sizes and visibility
         frame.setVisible(true);
@@ -30,6 +26,10 @@ public class GUI {
 
         panel.setLayout(null); // set the layout to be null
 
+        
+        // helps choose which cards
+       
+        
         cardChoices = new JButton[3];
         for (int i = 0; i < 3; i++) {
             cardChoices[i] = new JButton((i + 1) + ""); // makes the text, 1, 2, 3 for card choices
@@ -42,7 +42,12 @@ public class GUI {
             panel.add(cardChoices[i]); // adds them in and then puts them
             cardChoices[i].setBounds(140 + 100 * i, 350, 100, 50);
         }
-
+        
+        // next block is for text Area
+        
+        txtMoves = new JTextArea();
+        txtMoves.append("Welcome to CHIMP!\n\n");
+        
         JScrollPane scrollableTextArea = new JScrollPane(txtMoves);
 
         scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -53,6 +58,11 @@ public class GUI {
 
         panel.add(scrollableTextArea);
 
+        
+        // next blocks are for btnIntructions
+        
+        btnInstructions = new JButton("HELP"); // a help button that opens up the pdf to the rules
+        
         btnInstructions.addActionListener(e -> { // if pressed, then it opens the file
             try {
                 if ((new File("C:\\Users\\Eric\\eclipse-workspace\\Chimp\\src\\CHIMP instructions.pdf")).exists()) {
