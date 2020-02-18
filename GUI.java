@@ -1,3 +1,10 @@
+/* Eric Huang
+* CHIMP Game - GUI Class
+* Contains the UI, with buttons to click and text to look at for gameplay
+* Start date : Feb.10th 2020 
+* End date : Feb.18th 2020
+*/
+
 import javax.swing.*;
 import java.io.File;
 
