@@ -1,3 +1,11 @@
+/* Eric Huang
+* CHIMP Game - Card Class
+* A class that stores the value and suit of the card
+* Since values are being stored as a short from 0-51 for space efficiency, also includes decoding and encoding methods
+* Start date : Feb.10th 2020 
+* End date : Feb.18th 2020
+*/
+
 public class Card {
     byte value; // this is the card class within the deck class. This will allow for the display of cards
     String suit; // while it is saved as a short
