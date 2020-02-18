@@ -1,9 +1,12 @@
-/*
- *Eric Huang - Feb.10th 2020
- *
- * This is made for the CHIMP Game, this the deck game
- *
- */
+/* Eric Huang
+*
+* CHIMP Game - Deck Class
+*
+* Essentially a linkedlist of cards that are stored as a short for space efficiency (bytes still might lead to some memory overleak)
+*
+* Start date : Feb.10th 2020 
+* End date : Feb.18th 2020
+*/
 
 
 import javax.swing.*;
@@ -68,13 +71,11 @@ public class Deck { // this is the deck class for the cards
 
         for (int i = 0; i <= cards.size() - 1; i++) {
 
-
             Short a = cards.get(i);
-
-
             deck += Card.decode(a) + (i == cards.size() - 1 ? "." : ", ");
 
         }
+        
         return deck;
     }
 
